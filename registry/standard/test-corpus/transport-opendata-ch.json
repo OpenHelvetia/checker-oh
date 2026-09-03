@@ -1,0 +1,45 @@
+{
+  "$schema": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "@context": "https://ld.openhelvetia.swiss/ns/manifest/v1",
+  "@id": "https://ld.openhelvetia.swiss/registry/transport-opendata-ch",
+  "@type": "Manifest",
+  "title": {
+    "de": "Swiss Transport API (transport.opendata.ch)",
+    "en": "Swiss Transport API (transport.opendata.ch)"
+  },
+  "description": {
+    "de": "Inoffizielle, frei nutzbare JSON-API für Schweizer öV-Fahrplandaten (Verbindungen, Stationssuche, Abfahrtstafeln), betrieben von Opendata.ch auf Basis des Web-Services von timetable.search.ch. Ohne Registrierung und API-Key nutzbar — dadurch sehr KI-/Agenten-tauglich.",
+    "en": "Unofficial, freely usable JSON API for Swiss public transport timetables (connections, station search, departure boards), run by Opendata.ch on top of the timetable.search.ch web service. No registration or API key required, making it very agent-friendly."
+  },
+  "keyword": {
+    "de": [
+      "öffentlicher Verkehr",
+      "Fahrplan",
+      "Community"
+    ],
+    "en": [
+      "public transport",
+      "timetable",
+      "community"
+    ]
+  },
+  "publisher": "https://ld.openhelvetia.swiss/org/opendata-ch",
+  "license": "https://transport.opendata.ch/docs.html",
+  "landingPage": "https://transport.opendata.ch/",
+  "interfaces": [
+    {
+      "@type": "RestInterface",
+      "endpoint": "https://transport.opendata.ch/v1/",
+      "docs": "https://transport.opendata.ch/docs.html",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-get",
+        "expect": "response"
+      }
+    }
+  ],
+  "issued": "2026-08-15"
+}

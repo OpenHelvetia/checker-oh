@@ -1,0 +1,48 @@
+{
+  "$schema": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "@context": "https://ld.openhelvetia.swiss/ns/manifest/v1",
+  "@id": "https://ld.openhelvetia.swiss/registry/openhelvetia-fedlex-mcp",
+  "@type": "Manifest",
+  "title": {
+    "de": "OpenHelvetia — MCP-Zugang zum Schweizer Bundesrecht (fedlex, Basis-Stufe)",
+    "en": "OpenHelvetia — MCP access to Swiss federal law (fedlex, base tier)"
+  },
+  "description": {
+    "de": "Eine MCP-Schnittstelle des Vereins zur Fedlex-Infrastruktur des Bundes, hinter dem Plattform-Gateway: fünfunddreissig Werkzeuge über dem öffentlichen Fedlex-SPARQL-Endpunkt und den amtlichen Akoma-Ntoso-Fassungen — acht schliessen die bitemporale Zitierschleife (SR-Nummer zu ELI auflösen, Fassungen listen, die an einem Datum geltende Konsolidierung bestimmen, Inkraftsein prüfen, Artikeltext eId-genau lesen, Zitierbeziehungen und Metadaten abfragen, Erlasse suchen), zwölf navigieren im Erlass (Gliederung, Textsuche, Gesamttext, Verweise, Änderungsvermerke, Anhänge, Artikelhistorie, Untergliederungen, Systematik, Sprachfassungen, Vokabular, verwandte Erlasse), dreizehn vervollständigen die Fläche (Tabellen, Fundstellen-Zerlegung, Fassungsvergleich, Knotensicht, Fremdinhalte, Staatsverträge, Vernehmlassungen, Amtliche Sammlung, Bundesblatt, Entwürfe), zwei schliessen die Belegkette (ein Zitat gegen den gelesenen Normtext prüfen, die kanonische Fundstelle eines eId schreiben). Stateless, ohne Konto, ohne Zustandshaltung; die Plattform legt damit zuerst die Schnittstelle offen, die sie selbst betreibt; die Daten bleiben beim Bund.",
+    "en": "An MCP interface by the association to the Confederation's Fedlex infrastructure, behind the platform gateway: thirty-five tools over the public Fedlex SPARQL endpoint and its official Akoma-Ntoso texts — eight close the bitemporal citation loop (resolve an SR number to an ELI, list versions, determine the consolidation governing at a date, check whether a provision is in force, read article text eId-precise, query citation relations and metadata, search enactments), twelve navigate inside an act (outline, text search, whole document, references, amendment notes, annexes, article history, subdivisions, taxonomy, language versions, vocabulary, related acts), thirteen complete the surface (tables, citation parsing, version comparison, node view, foreign content, treaties, consultations, Official Compilation, Federal Gazette, drafts), two close the citation chain (check a quote against the norm text that was read, write the canonical Fundstelle of an eId). Stateless, account-free, no state kept; the platform shows first the interface it operates itself; the data stays with the Confederation."
+  },
+  "keyword": {
+    "de": [
+      "MCP",
+      "Bundesrecht",
+      "Fedlex",
+      "bitemporal"
+    ],
+    "en": [
+      "MCP",
+      "federal law",
+      "Fedlex",
+      "bitemporal"
+    ]
+  },
+  "publisher": "https://ld.openhelvetia.swiss/org/openhelvetia",
+  "license": "https://dcat-ap.ch/vocabulary/licenses/terms_open",
+  "landingPage": "https://openhelvetia.swiss/en/docs/infrastructure/module-fedlex-engine/",
+  "conformsTo": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "interfaces": [
+    {
+      "@type": "McpInterface",
+      "endpoint": "https://mcp.openhelvetia.swiss/mcp",
+      "conformsTo": "https://modelcontextprotocol.io/specification/2026-07-28",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "mcp-discover",
+        "expect": "ok"
+      }
+    }
+  ],
+  "issued": "2026-08-26"
+}

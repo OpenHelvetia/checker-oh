@@ -1,0 +1,58 @@
+{
+  "$schema": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "@context": "https://ld.openhelvetia.swiss/ns/manifest/v1",
+  "@id": "https://ld.openhelvetia.swiss/registry/zefix-shab",
+  "@type": "Manifest",
+  "title": {
+    "de": "Zefix & SHAB — Handelsregister und amtliche Publikationen",
+    "en": "Zefix & SOGC — commercial register and official gazette publications"
+  },
+  "description": {
+    "de": "Der Zentrale Firmenindex Zefix bietet eine REST-API auf alle im Handelsregister eingetragenen Rechtseinheiten inklusive SHAB-/SOGC-Publikationen (täglich aktualisiert). Ergänzend liefert die Amtsblattportal-/SHAB-API publizierte Meldungen ohne Authentifizierung.",
+    "en": "The central business name index Zefix offers a REST API covering all legal entities in the Swiss commercial register, including SOGC (SHAB) publications, updated daily. In addition, the official gazette portal (SHAB) API serves published notices without authentication."
+  },
+  "keyword": {
+    "de": [
+      "Handelsregister",
+      "SHAB",
+      "Firmen"
+    ],
+    "en": [
+      "commercial register",
+      "SOGC",
+      "companies"
+    ]
+  },
+  "publisher": "https://ld.openhelvetia.swiss/org/ch-ehra",
+  "license": "https://dcat-ap.ch/vocabulary/licenses/terms_by",
+  "landingPage": "https://www.zefix.admin.ch/",
+  "interfaces": [
+    {
+      "@type": "RestInterface",
+      "endpoint": "https://www.zefix.admin.ch/ZefixPublicREST/api/v1",
+      "docs": "https://www.zefix.admin.ch/ZefixPublicREST/swagger-ui/index.html",
+      "auth": {
+        "authType": "other"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-get",
+        "expect": "response"
+      }
+    },
+    {
+      "@type": "RestInterface",
+      "endpoint": "https://www.shab.ch/api/v1/publications",
+      "docs": "https://www.amtsblattportal.ch/docs/api/",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-get",
+        "expect": "response"
+      }
+    }
+  ],
+  "issued": "2026-08-15"
+}

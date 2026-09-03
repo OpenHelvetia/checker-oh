@@ -1,0 +1,46 @@
+{
+  "$schema": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "@context": "https://ld.openhelvetia.swiss/ns/manifest/v1",
+  "@id": "https://ld.openhelvetia.swiss/registry/opentransportdata-swiss",
+  "@type": "Manifest",
+  "title": {
+    "de": "Open-Data-Plattform Mobilität Schweiz (opentransportdata.swiss)",
+    "en": "Open Data Platform Mobility Switzerland (opentransportdata.swiss)"
+  },
+  "description": {
+    "de": "Offizielle Open-Data-Plattform des Bundes für den öffentlichen Verkehr mit Fahrplan- und Echtzeitdaten. Zentrale KI-taugliche Schnittstelle ist der Open Journey Planner (OJP 2.0, XML über POST).",
+    "en": "Official federal open data platform for Swiss public transport with timetable and real-time data. Its core machine interface is the Open Journey Planner API (OJP 2.0, XML over POST)."
+  },
+  "keyword": {
+    "de": [
+      "öffentlicher Verkehr",
+      "Fahrplan",
+      "OJP"
+    ],
+    "en": [
+      "public transport",
+      "timetable",
+      "OJP"
+    ]
+  },
+  "publisher": "https://ld.openhelvetia.swiss/org/ch-bav",
+  "license": "https://opentransportdata.swiss/en/terms-of-use/",
+  "landingPage": "https://opentransportdata.swiss/en/",
+  "interfaces": [
+    {
+      "@type": "RestInterface",
+      "endpoint": "https://api.opentransportdata.swiss/ojp20",
+      "docs": "https://opentransportdata.swiss/en/cookbook/open-journey-planner-ojp/",
+      "auth": {
+        "authType": "apikey",
+        "docs": "https://api-manager.opentransportdata.swiss/"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-get",
+        "expect": "response"
+      }
+    }
+  ],
+  "issued": "2026-08-15"
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "@context": "https://ld.openhelvetia.swiss/ns/manifest/v1",
+  "@id": "https://ld.openhelvetia.swiss/registry/openhelvetia-lindas-mcp",
+  "@type": "Manifest",
+  "title": {
+    "de": "OpenHelvetia — MCP-Zugang zu den politischen Datenwürfeln des Bundes (LINDAS, Basis-Stufe)",
+    "en": "OpenHelvetia — MCP access to the Confederation's political data cubes (LINDAS, base tier)"
+  },
+  "description": {
+    "de": "Eine MCP-Schnittstelle des Vereins zum Linked Data Service LINDAS des Bundes, hinter dem Plattform-Gateway: acht Werkzeuge über dem öffentlichen SPARQL-Endpunkt lindas.admin.ch/query und den 44 politischen Datenwürfeln unter politics.ld.admin.ch — Volksabstimmungen samt Ständemehr, Referendumsvorlagen und ihre Geschäftsstände, Volksinitiativen, Nationalratswahlen 2019/2023/2027, Bundesrat und das Register der Interessenbindungen der Bundeskanzlei. Die Werkzeuge: die Liste der Würfel mit ihren Zuständen, Suche nach einem Wort des Namens, die deklarierten Dimensionen eines Würfels, die Werte einer Dimension, die Zeilen selbst mit Filtern, die Fassungen einer Familie, alles zu einer IRI, und die Auflösung einer IRI zu ihrer Beschriftung. Quelle: Bundesarchiv (Betrieb LINDAS), Bundeskanzlei (Herausgeberin der Würfel) — der Server erzeugt keine Daten und leitet nichts ab: das Ständemehr wird aus der Zeile GELESEN, nie aus den Kantonen gezählt. Zugang: öffentlich (I14Y-Datendienst c9cf11b6-d165-4498-92fc-d51167def66c, accessRights PUBLIC des EU-Vokabulars). Lizenz: an der Quelle nicht angegeben — kein Würfel nennt eine, und der I14Y-Datendienst kennt kein Lizenzfeld; jede Antwort dieses Servers sagt das. Zustandslos, ohne Konto.",
+    "en": "An MCP interface by the association to the Confederation's Linked Data Service LINDAS, behind the platform gateway: eight tools over the public SPARQL endpoint lindas.admin.ch/query and the 44 political data cubes under politics.ld.admin.ch — popular votes including the Ständemehr, referendum bills and their states, popular initiatives, the National Council elections 2019/2023/2027, the Federal Council and the Federal Chancellery's register of vested interests. The tools: the list of cubes with their states, search by a word of the name, a cube's declared dimensions, the values one dimension takes, the rows themselves with filters, the versions of a family, everything the store says about one IRI, and an IRI resolved to its label. Source: Swiss Federal Archives (operator of LINDAS), Federal Chancellery (publisher of the cubes) — the server creates no data and derives nothing: the Ständemehr is READ from the row, never counted from the cantons. Access: public (I14Y data service c9cf11b6-d165-4498-92fc-d51167def66c, accessRights PUBLIC of the EU vocabulary). Licence: not stated at the source — no cube names one and the I14Y data-service schema has no licence field; every answer of this server says so. Stateless, account-free."
+  },
+  "keyword": {
+    "de": [
+      "MCP",
+      "LINDAS",
+      "Volksabstimmung",
+      "Nationalratswahl",
+      "Interessenbindung"
+    ],
+    "en": [
+      "MCP",
+      "LINDAS",
+      "popular vote",
+      "national council election",
+      "vested interests"
+    ]
+  },
+  "publisher": "https://ld.openhelvetia.swiss/org/openhelvetia",
+  "license": "https://www.admin.ch/gov/en/start/terms-and-conditions.html",
+  "landingPage": "https://openhelvetia.swiss/en/docs/infrastructure/module-political-data-engine/",
+  "conformsTo": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "interfaces": [
+    {
+      "@type": "McpInterface",
+      "endpoint": "https://mcp.openhelvetia.swiss/mcp",
+      "conformsTo": "https://modelcontextprotocol.io/specification/2026-07-28",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "mcp-discover",
+        "expect": "ok"
+      }
+    }
+  ],
+  "issued": "2026-08-30"
+}

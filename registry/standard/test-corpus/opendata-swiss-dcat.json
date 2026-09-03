@@ -1,0 +1,71 @@
+{
+  "$schema": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "@context": "https://ld.openhelvetia.swiss/ns/manifest/v1",
+  "@id": "https://ld.openhelvetia.swiss/registry/opendata-swiss-dcat",
+  "@type": "Manifest",
+  "title": {
+    "de": "opendata.swiss DCAT-AP-CH-Export (Harvesting)",
+    "en": "opendata.swiss DCAT-AP CH export (harvesting)"
+  },
+  "description": {
+    "de": "Maschinenlesbarer Gesamtexport des opendata.swiss-Katalogs im Standard DCAT-AP CH als RDF/XML, Turtle oder JSON-LD, paginiert über den Query-Parameter page. Geeignet als Harvesting-Quelle für nachgelagerte Kataloge und Knowledge Graphs.",
+    "en": "Machine-readable full export of the opendata.swiss catalogue in the DCAT-AP CH standard as RDF/XML, Turtle or JSON-LD, paginated via the page query parameter. Suitable as a harvesting source for downstream catalogues and knowledge graphs."
+  },
+  "keyword": {
+    "de": [
+      "DCAT-AP CH",
+      "Harvesting",
+      "RDF"
+    ],
+    "en": [
+      "DCAT-AP CH",
+      "harvesting",
+      "RDF"
+    ]
+  },
+  "publisher": "https://ld.openhelvetia.swiss/org/ch-bfs",
+  "license": "https://opendata.swiss/de/terms-of-use",
+  "landingPage": "https://opendata.swiss/de",
+  "interfaces": [
+    {
+      "@type": "DownloadInterface",
+      "endpoint": "https://ckan.opendata.swiss/catalog.xml",
+      "docs": "https://handbook.opendata.swiss/de/content/nutzen/api-nutzen.html",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-head",
+        "expect": "response"
+      }
+    },
+    {
+      "@type": "DownloadInterface",
+      "endpoint": "https://ckan.opendata.swiss/catalog.ttl",
+      "docs": "https://handbook.opendata.swiss/de/content/nutzen/api-nutzen.html",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-head",
+        "expect": "response"
+      }
+    },
+    {
+      "@type": "DownloadInterface",
+      "endpoint": "https://ckan.opendata.swiss/catalog.jsonld",
+      "docs": "https://handbook.opendata.swiss/de/content/nutzen/api-nutzen.html",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-head",
+        "expect": "response"
+      }
+    }
+  ],
+  "issued": "2026-08-15"
+}

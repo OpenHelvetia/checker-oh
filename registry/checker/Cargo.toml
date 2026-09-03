@@ -1,0 +1,23 @@
+[package]
+name = "oh-check"
+version = "0.1.0"
+edition = "2024"
+description = "Checker core (L1.2): declared liveness probes, check gradient, history, badges"
+
+[lib]
+name = "oh_check"
+path = "src/lib.rs"
+
+[dependencies]
+anyhow = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# Exact pin (tool register): the probe transport must not change
+# behavior silently under a minor bump.
+ureq = { version = "=3.4.0", features = ["json"] }
+# The signing path (L0.7) — drift detection compares JCS hashes and
+# re-verifies signatures exactly the way the spec's verifier does.
+oh-sign = { path = "../standard/card/sign" }
+# Same exact pin and rationale as stage 4 / oh-seal: drift hashes
+# must never change under a silent bump.
+sha2 = "=0.11.0"

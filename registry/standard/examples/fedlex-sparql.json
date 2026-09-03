@@ -1,0 +1,49 @@
+{
+  "$schema": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "@context": "https://ld.openhelvetia.swiss/ns/manifest/v1",
+  "@id": "https://ld.openhelvetia.swiss/registry/fedlex-sparql",
+  "@type": "Manifest",
+  "title": {
+    "de": "Fedlex — SPARQL-Endpunkt des Bundesrechts",
+    "fr": "Fedlex — point d'accès SPARQL du droit fédéral",
+    "it": "Fedlex — endpoint SPARQL del diritto federale",
+    "en": "Fedlex — SPARQL endpoint for Swiss federal law"
+  },
+  "description": {
+    "de": "Der offizielle Linked-Data-Zugang zur Publikationsplattform des Bundesrechts: JOLux-Ontologie, ELI-URIs, bi-temporale Fassungen, fünfsprachig.",
+    "en": "The official linked-data access to the Swiss federal law publication platform: JOLux ontology, ELI URIs, bi-temporal consolidations, five languages."
+  },
+  "keyword": {
+    "de": [
+      "Bundesrecht",
+      "JOLux",
+      "ELI",
+      "Linked Data"
+    ],
+    "en": [
+      "federal law",
+      "JOLux",
+      "ELI",
+      "linked data"
+    ]
+  },
+  "publisher": "https://ld.openhelvetia.swiss/org/ch-bundeskanzlei",
+  "license": "https://dcat-ap.ch/vocabulary/licenses/terms_open",
+  "landingPage": "https://www.fedlex.admin.ch",
+  "interfaces": [
+    {
+      "@type": "SparqlInterface",
+      "endpoint": "https://fedlex.data.admin.ch/sparqlendpoint",
+      "docs": "https://fedlex.data.admin.ch",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "sparql-ask",
+        "expect": "boolean"
+      }
+    }
+  ],
+  "issued": "2026-08-15"
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "@context": "https://ld.openhelvetia.swiss/ns/manifest/v1",
+  "@id": "https://ld.openhelvetia.swiss/registry/musterwil-mcp",
+  "@type": "Manifest",
+  "title": {
+    "de": "Musterwil — MCP-Zugang zu den offenen Daten der Gemeinde",
+    "en": "Musterwil — MCP access to the municipality's open data"
+  },
+  "description": {
+    "de": "Ein Beispiel-Manifest: ein MCP-Server einer Gemeinde über ihren offenen Daten, mit einer Basis-Stufe und einer semantischen Stufe. Musterwil ist erfunden; das Manifest zeigt die Form, nicht eine Quelle.",
+    "en": "An example manifest: a municipality's MCP server over its open data, with a base tier and a semantic tier. Musterwil is fictional; the manifest shows the shape, not a source."
+  },
+  "keyword": {
+    "de": [
+      "Beispiel",
+      "Gemeinde",
+      "MCP"
+    ],
+    "en": [
+      "example",
+      "municipality",
+      "MCP"
+    ]
+  },
+  "publisher": "https://ld.openhelvetia.swiss/org/musterwil",
+  "license": "https://www.apache.org/licenses/LICENSE-2.0",
+  "landingPage": "https://data.musterwil.example",
+  "interfaces": [
+    {
+      "@type": "McpInterface",
+      "endpoint": "https://mcp.musterwil.example/mcp",
+      "conformsTo": "https://modelcontextprotocol.io/specification/2026-07-28",
+      "auth": {
+        "authType": "apikey"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "mcp-initialize",
+        "expect": "response"
+      }
+    },
+    {
+      "@type": "McpInterface",
+      "endpoint": "https://mcp.musterwil.example/mcp-semantic",
+      "auth": {
+        "authType": "apikey"
+      },
+      "tier": "semantic",
+      "probe": {
+        "kind": "mcp-initialize",
+        "expect": "response"
+      }
+    }
+  ],
+  "issued": "2026-08-15"
+}

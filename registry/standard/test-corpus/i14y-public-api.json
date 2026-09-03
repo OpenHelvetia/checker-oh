@@ -1,0 +1,58 @@
+{
+  "$schema": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "@context": "https://ld.openhelvetia.swiss/ns/manifest/v1",
+  "@id": "https://ld.openhelvetia.swiss/registry/i14y-public-api",
+  "@type": "Manifest",
+  "title": {
+    "de": "I14Y-Interoperabilitätsplattform Public API",
+    "en": "I14Y interoperability platform public API"
+  },
+  "description": {
+    "de": "Öffentliche REST-API des nationalen Datenkatalogs I14Y: Metadaten zu Datensätzen, elektronischen Schnittstellen (APIs), Behördenleistungen sowie Konzepte und Codelisten, inklusive DCAT-Export pro Katalog (202 Kataloge, u. a. swisstopo, ESTV, BJ). Lesender Zugriff ohne Authentifizierung.",
+    "en": "Public REST API of Switzerland's national data catalogue I14Y: metadata on datasets, electronic interfaces (APIs) and public services plus concepts and code lists, including a per-catalogue DCAT export (202 catalogues, e.g. swisstopo, FTA, FOJ). Read access without authentication."
+  },
+  "keyword": {
+    "de": [
+      "Interoperabilität",
+      "Metadaten",
+      "Codelisten"
+    ],
+    "en": [
+      "interoperability",
+      "metadata",
+      "code lists"
+    ]
+  },
+  "publisher": "https://ld.openhelvetia.swiss/org/ch-bfs",
+  "license": "https://dcat-ap.ch/vocabulary/licenses/terms_open",
+  "landingPage": "https://www.i14y.admin.ch/de/home",
+  "interfaces": [
+    {
+      "@type": "RestInterface",
+      "endpoint": "https://api.i14y.admin.ch/api/public/v1/",
+      "docs": "https://apiconsole.i14y.admin.ch/",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-get",
+        "expect": "response"
+      }
+    },
+    {
+      "@type": "DownloadInterface",
+      "endpoint": "https://api.i14y.admin.ch/api/public/v1/catalogs/8ec39bcd-9f7c-4dd5-b0c9-ce69e2aafb39/dcat/exports/ttl",
+      "docs": "https://i14y-ch.github.io/handbook/de/metadaten_abrufen/api/",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-head",
+        "expect": "response"
+      }
+    }
+  ],
+  "issued": "2026-08-15"
+}

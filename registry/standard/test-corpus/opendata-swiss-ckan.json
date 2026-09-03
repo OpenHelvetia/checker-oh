@@ -1,0 +1,45 @@
+{
+  "$schema": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "@context": "https://ld.openhelvetia.swiss/ns/manifest/v1",
+  "@id": "https://ld.openhelvetia.swiss/registry/opendata-swiss-ckan",
+  "@type": "Manifest",
+  "title": {
+    "de": "opendata.swiss CKAN-API",
+    "en": "opendata.swiss CKAN API"
+  },
+  "description": {
+    "de": "CKAN-Action-API des zentralen Schweizer Open-Government-Data-Portals mit rund 16'200 Datensätzen von Bund, Kantonen, Gemeinden und weiteren Organisationen. Lesender Zugriff auf Metadaten (package_search, package_show, organization_list u. a.) ohne Authentifizierung.",
+    "en": "CKAN action API of Switzerland's central open government data portal, covering roughly 16,200 datasets from federal, cantonal, municipal and other organisations. Read access to metadata (package_search, package_show, organization_list, etc.) without authentication."
+  },
+  "keyword": {
+    "de": [
+      "OGD",
+      "Datenkatalog",
+      "CKAN"
+    ],
+    "en": [
+      "open government data",
+      "data catalogue",
+      "CKAN"
+    ]
+  },
+  "publisher": "https://ld.openhelvetia.swiss/org/ch-bfs",
+  "license": "https://opendata.swiss/de/terms-of-use",
+  "landingPage": "https://opendata.swiss/de",
+  "interfaces": [
+    {
+      "@type": "RestInterface",
+      "endpoint": "https://ckan.opendata.swiss/api/3/action/",
+      "docs": "https://handbook.opendata.swiss/de/content/nutzen/api-nutzen.html",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-get",
+        "expect": "response"
+      }
+    }
+  ],
+  "issued": "2026-08-15"
+}

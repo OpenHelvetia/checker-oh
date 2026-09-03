@@ -1,0 +1,60 @@
+{
+  "$schema": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "@context": "https://ld.openhelvetia.swiss/ns/manifest/v1",
+  "@id": "https://ld.openhelvetia.swiss/registry/lindas-gemeindeverzeichnis-historisiert",
+  "@type": "Manifest",
+  "title": {
+    "de": "Historisiertes Gemeindeverzeichnis der Schweiz auf LINDAS",
+    "en": "Historicised municipality register of Switzerland on LINDAS"
+  },
+  "description": {
+    "de": "Das amtliche, historisierte Gemeindeverzeichnis des BFS (alle Gemeinden seit 1848 inkl. Mutationen, Standard eCH-0071) als Linked Data auf LINDAS; jede Gemeinde und jede historische Version hat eine dereferenzierbare URI.",
+    "en": "The FSO's official historicised municipality register (all municipalities since 1848 incl. mutations, standard eCH-0071) as linked data on LINDAS; every municipality and every historical version has a dereferenceable URI."
+  },
+  "keyword": {
+    "de": [
+      "Gemeinden",
+      "Register",
+      "Historisierung",
+      "Linked Data"
+    ],
+    "en": [
+      "municipalities",
+      "register",
+      "historicisation",
+      "linked data"
+    ]
+  },
+  "publisher": "https://ld.openhelvetia.swiss/org/ch-bfs",
+  "license": "https://dcat-ap.ch/vocabulary/licenses/terms_open",
+  "landingPage": "https://www.bfs.admin.ch/bfs/de/home/grundlagen/agvch/historisiertes-gemeindeverzeichnis.html",
+  "interfaces": [
+    {
+      "@type": "SparqlInterface",
+      "endpoint": "https://lindas.admin.ch/query",
+      "docs": "https://lindas.admin.ch/know-how",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "sparql-ask",
+        "expect": "boolean"
+      }
+    },
+    {
+      "@type": "DownloadInterface",
+      "endpoint": "https://ld.admin.ch/municipality/261",
+      "docs": "https://lindas.admin.ch/know-how",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-head",
+        "expect": "response"
+      }
+    }
+  ],
+  "issued": "2026-08-15"
+}

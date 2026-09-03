@@ -1,0 +1,73 @@
+{
+  "$schema": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "@context": "https://ld.openhelvetia.swiss/ns/manifest/v1",
+  "@id": "https://ld.openhelvetia.swiss/registry/entscheidsuche-api",
+  "@type": "Manifest",
+  "title": {
+    "de": "entscheidsuche.ch – Schweizer Gerichtsentscheide (Such-API, Dokumente, MCP)",
+    "en": "entscheidsuche.ch – Swiss court decisions (search API, documents, MCP)"
+  },
+  "description": {
+    "de": "Der gemeinnützige Verein entscheidsuche.ch sammelt seit 2017 publizierte Entscheide aller Schweizer Gerichte (Bund und Kantone, >350'000 Dokumente) und stellt sie über eine offene Elasticsearch-Such-API, ein Dokumentenverzeichnis (PDF/HTML + JSON-Metadaten) und einen gehosteten MCP-Server bereit.",
+    "en": "The non-profit association entscheidsuche.ch has been collecting published decisions of all Swiss courts (federal and cantonal, >350,000 documents) since 2017 and provides them via an open Elasticsearch search API, a document directory (PDF/HTML plus JSON metadata) and a hosted MCP server."
+  },
+  "keyword": {
+    "de": [
+      "Gerichtsentscheide",
+      "Rechtsprechung",
+      "Volltextsuche",
+      "MCP"
+    ],
+    "en": [
+      "court decisions",
+      "case law",
+      "full-text search",
+      "MCP"
+    ]
+  },
+  "publisher": "https://ld.openhelvetia.swiss/org/verein-entscheidsuche",
+  "license": "https://dcat-ap.ch/vocabulary/licenses/terms_open",
+  "landingPage": "https://entscheidsuche.ch/",
+  "interfaces": [
+    {
+      "@type": "RestInterface",
+      "endpoint": "https://entscheidsuche.ch/_search.php",
+      "docs": "https://entscheidsuche.ch/pdf/EntscheidsucheAPI.pdf",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-get",
+        "expect": "response"
+      }
+    },
+    {
+      "@type": "DownloadInterface",
+      "endpoint": "https://entscheidsuche.ch/docs/",
+      "docs": "https://entscheidsuche.ch/pdf/EntscheidsucheAPI.pdf",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-head",
+        "expect": "response"
+      }
+    },
+    {
+      "@type": "McpInterface",
+      "endpoint": "https://mcp.entscheidsuche.ch/mcp",
+      "docs": "https://github.com/entscheidsuche/entscheidsuche-mcp",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "mcp-initialize",
+        "expect": "response"
+      }
+    }
+  ],
+  "issued": "2026-08-15"
+}

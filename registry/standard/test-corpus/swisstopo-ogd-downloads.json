@@ -1,0 +1,58 @@
+{
+  "$schema": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "@context": "https://ld.openhelvetia.swiss/ns/manifest/v1",
+  "@id": "https://ld.openhelvetia.swiss/registry/swisstopo-ogd-downloads",
+  "@type": "Manifest",
+  "title": {
+    "de": "Kostenlose Geobasisdaten (OGD) von swisstopo",
+    "en": "swisstopo free geodata (OGD) downloads"
+  },
+  "description": {
+    "de": "Seit der OGD-Umstellung sind die Geobasisdaten von swisstopo (Landeskarten, swissALTI3D, swissTLM3D, swissIMAGE u. a.) kostenlos beziehbar: über die Download-Oberflächen auf swisstopo.admin.ch und maschinell über das Portal data.geo.admin.ch bzw. dessen STAC-API. Über 850 Datensätze sind zusätzlich auf map.geo.admin.ch einsehbar.",
+    "en": "Since the OGD transition, swisstopo's basic geodata (national maps, swissALTI3D, swissTLM3D, swissIMAGE, etc.) is available free of charge: via the download interfaces on swisstopo.admin.ch and programmatically via the data.geo.admin.ch portal and its STAC API. Over 850 datasets can also be viewed on map.geo.admin.ch."
+  },
+  "keyword": {
+    "de": [
+      "Geobasisdaten",
+      "swisstopo",
+      "OGD"
+    ],
+    "en": [
+      "basic geodata",
+      "swisstopo",
+      "open data"
+    ]
+  },
+  "publisher": "https://ld.openhelvetia.swiss/org/ch-swisstopo",
+  "license": "https://www.swisstopo.admin.ch/de/nutzungsbedingungen-kostenlose-geodaten-und-geodienste",
+  "landingPage": "https://www.swisstopo.admin.ch/de/kostenlose-geobasisdaten-ogd",
+  "interfaces": [
+    {
+      "@type": "DownloadInterface",
+      "endpoint": "https://data.geo.admin.ch/",
+      "docs": "https://www.swisstopo.admin.ch/de/kostenlose-geobasisdaten-ogd",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-head",
+        "expect": "response"
+      }
+    },
+    {
+      "@type": "RestInterface",
+      "endpoint": "https://data.geo.admin.ch/api/stac/v1/collections/ch.swisstopo.swissalti3d",
+      "docs": "https://docs.geo.admin.ch/download-data/stac-api/overview.html",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-get",
+        "expect": "response"
+      }
+    }
+  ],
+  "issued": "2026-08-15"
+}

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "@context": "https://ld.openhelvetia.swiss/ns/manifest/v1",
+  "@id": "https://ld.openhelvetia.swiss/registry/geo-admin-stac-api",
+  "@type": "Manifest",
+  "title": {
+    "de": "STAC-API data.geo.admin.ch (Geodaten-Downloads des Bundes)",
+    "en": "data.geo.admin.ch STAC API (Federal geodata downloads)"
+  },
+  "description": {
+    "de": "SpatioTemporal Asset Catalog (STAC 1.0.0) der Bundes-Geodaten-Infrastruktur: maschinenlesbare Suche und Download dateibasierter Geodatensätze des Bundes (inkl. swisstopo-Produkte wie swissALTI3D, swissTLM3D). Lesender Zugriff vollständig ohne Authentifizierung.",
+    "en": "SpatioTemporal Asset Catalog (STAC 1.0.0) of the Federal Spatial Data Infrastructure: machine-readable discovery and download of file-based federal geodata (including swisstopo products such as swissALTI3D and swissTLM3D). Read access requires no authentication."
+  },
+  "keyword": {
+    "de": [
+      "Geodaten",
+      "STAC",
+      "Download"
+    ],
+    "en": [
+      "geodata",
+      "STAC",
+      "download"
+    ]
+  },
+  "publisher": "https://ld.openhelvetia.swiss/org/ch-swisstopo",
+  "license": "https://dcat-ap.ch/vocabulary/licenses/terms_by",
+  "landingPage": "https://data.geo.admin.ch/",
+  "interfaces": [
+    {
+      "@type": "RestInterface",
+      "endpoint": "https://data.geo.admin.ch/api/stac/v1/",
+      "docs": "https://docs.geo.admin.ch/download-data/stac-api/overview.html",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-get",
+        "expect": "response"
+      }
+    },
+    {
+      "@type": "DownloadInterface",
+      "endpoint": "https://data.geo.admin.ch/api/stac/v1/collections",
+      "docs": "https://data.geo.admin.ch/api/stac/static/spec/v1/api.html",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-head",
+        "expect": "response"
+      }
+    }
+  ],
+  "issued": "2026-08-15"
+}

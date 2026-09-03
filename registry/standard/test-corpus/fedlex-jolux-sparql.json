@@ -1,0 +1,47 @@
+{
+  "$schema": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "@context": "https://ld.openhelvetia.swiss/ns/manifest/v1",
+  "@id": "https://ld.openhelvetia.swiss/registry/fedlex-jolux-sparql",
+  "@type": "Manifest",
+  "title": {
+    "de": "Fedlex Linked Data (JOLux) – SPARQL-Endpunkt",
+    "en": "Fedlex Linked Data (JOLux) – SPARQL endpoint"
+  },
+  "description": {
+    "de": "Sämtliche Metadaten und Dokumentverweise des Schweizer Bundesrechts (Amtliche Sammlung AS, Systematische Rechtssammlung SR, Bundesblatt BBl, Staatsverträge) als Linked Data nach dem JOLux/ELI-Datenmodell. Abfragbar über einen öffentlichen Virtuoso-SPARQL-Endpunkt ohne Registrierung.",
+    "en": "All metadata and document references of Swiss federal law (Official Compilation AS, Classified Compilation SR, Federal Gazette BBl, international treaties) as linked data using the JOLux/ELI data model, queryable via a public Virtuoso SPARQL endpoint without registration."
+  },
+  "keyword": {
+    "de": [
+      "Bundesrecht",
+      "JOLux",
+      "SPARQL",
+      "Bundesblatt"
+    ],
+    "en": [
+      "federal law",
+      "JOLux",
+      "SPARQL",
+      "Federal Gazette"
+    ]
+  },
+  "publisher": "https://ld.openhelvetia.swiss/org/ch-bundeskanzlei",
+  "license": "https://dcat-ap.ch/vocabulary/licenses/terms_open",
+  "landingPage": "https://fedlex.data.admin.ch/",
+  "interfaces": [
+    {
+      "@type": "SparqlInterface",
+      "endpoint": "https://fedlex.data.admin.ch/sparqlendpoint",
+      "docs": "https://lindas.admin.ch/data-usage/fedlex/",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "sparql-ask",
+        "expect": "boolean"
+      }
+    }
+  ],
+  "issued": "2026-08-15"
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "@context": "https://ld.openhelvetia.swiss/ns/manifest/v1",
+  "@id": "https://ld.openhelvetia.swiss/registry/visualize-admin-graphql",
+  "@type": "Manifest",
+  "title": {
+    "de": "visualize.admin.ch – GraphQL-API für LINDAS-Datencubes",
+    "en": "visualize.admin.ch – GraphQL API for LINDAS data cubes"
+  },
+  "description": {
+    "de": "Visualisierungsplattform des Bundes für Schweizer OGD-Datencubes auf LINDAS; die interne GraphQL-API liefert Cube-Metadaten und -Daten, die auch Embeds und Charts speisen.",
+    "en": "Federal visualization platform for Swiss OGD data cubes on LINDAS; its internal GraphQL API serves cube metadata and data that also power embeds and charts."
+  },
+  "keyword": {
+    "de": [
+      "Datenvisualisierung",
+      "GraphQL",
+      "Datencubes"
+    ],
+    "en": [
+      "data visualization",
+      "GraphQL",
+      "data cubes"
+    ]
+  },
+  "publisher": "https://ld.openhelvetia.swiss/org/ch-bafu",
+  "license": "https://dcat-ap.ch/vocabulary/licenses/terms_open",
+  "landingPage": "https://visualize.admin.ch/",
+  "interfaces": [
+    {
+      "@type": "RestInterface",
+      "endpoint": "https://visualize.admin.ch/api/graphql",
+      "docs": "https://visualize.admin.ch/docs/",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-get",
+        "expect": "response"
+      }
+    }
+  ],
+  "issued": "2026-08-15"
+}

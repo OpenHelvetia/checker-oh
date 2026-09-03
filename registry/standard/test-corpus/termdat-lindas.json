@@ -1,0 +1,60 @@
+{
+  "$schema": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "@context": "https://ld.openhelvetia.swiss/ns/manifest/v1",
+  "@id": "https://ld.openhelvetia.swiss/registry/termdat-lindas",
+  "@type": "Manifest",
+  "title": {
+    "de": "TERMDAT – Terminologie-Datenbank des Bundes (via LINDAS)",
+    "en": "TERMDAT – Swiss Federal Terminology Database (via LINDAS)"
+  },
+  "description": {
+    "de": "Die mehrsprachige Rechts- und Verwaltungsterminologie des Bundes (DE/FR/IT/RM/EN). Seit 2024 als Linked Data verfügbar: täglich exportiert nach schema.org/DefinedTerm(Set), abfragbar über den LINDAS-SPARQL-Endpunkt sowie den Register-Endpunkt register.ld.admin.ch/query/.",
+    "en": "The multilingual legal and administrative terminology of the Swiss federal administration (DE/FR/IT/RM/EN). Available as linked data since 2024: exported daily using schema.org/DefinedTerm(Set), queryable via the LINDAS SPARQL endpoint and the register endpoint register.ld.admin.ch/query/."
+  },
+  "keyword": {
+    "de": [
+      "Terminologie",
+      "Mehrsprachigkeit",
+      "Verwaltung",
+      "Linked Data"
+    ],
+    "en": [
+      "terminology",
+      "multilingual",
+      "administration",
+      "linked data"
+    ]
+  },
+  "publisher": "https://ld.openhelvetia.swiss/org/ch-bundeskanzlei",
+  "license": "https://dcat-ap.ch/vocabulary/licenses/terms_open",
+  "landingPage": "https://www.termdat.bk.admin.ch/",
+  "interfaces": [
+    {
+      "@type": "SparqlInterface",
+      "endpoint": "https://lindas.admin.ch/query",
+      "docs": "https://register.ld.admin.ch/.well-known/dataset/termdat",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "sparql-ask",
+        "expect": "boolean"
+      }
+    },
+    {
+      "@type": "SparqlInterface",
+      "endpoint": "https://register.ld.admin.ch/query/",
+      "docs": "https://register.ld.admin.ch/.well-known/dataset/termdat",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "sparql-ask",
+        "expect": "boolean"
+      }
+    }
+  ],
+  "issued": "2026-08-15"
+}

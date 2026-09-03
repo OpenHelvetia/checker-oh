@@ -1,0 +1,60 @@
+{
+  "$schema": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "@context": "https://ld.openhelvetia.swiss/ns/manifest/v1",
+  "@id": "https://ld.openhelvetia.swiss/registry/bfs-stattab-pxweb",
+  "@type": "Manifest",
+  "title": {
+    "de": "BFS STAT-TAB PxWeb-API und DAM-Datenkatalog-API",
+    "en": "FSO STAT-TAB PxWeb API and DAM data catalogue API"
+  },
+  "description": {
+    "de": "Programmatischer Zugriff auf die interaktive Statistikdatenbank STAT-TAB des Bundesamts für Statistik (PxWeb-API v1, Cubes als JSON/json-stat2/CSV/PX) sowie auf den BFS-Asset-Katalog (DAM-API, über 186'000 Assets inkl. Publikationen und Datenressourcen).",
+    "en": "Programmatic access to the Swiss Federal Statistical Office's interactive STAT-TAB database (PxWeb API v1, cubes as JSON/json-stat2/CSV/PX) and to the FSO asset catalogue (DAM API, 186,000+ assets incl. publications and data resources)."
+  },
+  "keyword": {
+    "de": [
+      "Statistik",
+      "STAT-TAB",
+      "PxWeb",
+      "OGD"
+    ],
+    "en": [
+      "statistics",
+      "STAT-TAB",
+      "PxWeb",
+      "open data"
+    ]
+  },
+  "publisher": "https://ld.openhelvetia.swiss/org/ch-bfs",
+  "license": "https://dcat-ap.ch/vocabulary/licenses/terms_by",
+  "landingPage": "https://www.pxweb.bfs.admin.ch/pxweb/de/",
+  "interfaces": [
+    {
+      "@type": "RestInterface",
+      "endpoint": "https://www.pxweb.bfs.admin.ch/api/v1/de/",
+      "docs": "https://www.bfs.admin.ch/asset/en/16944731",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-get",
+        "expect": "response"
+      }
+    },
+    {
+      "@type": "RestInterface",
+      "endpoint": "https://dam-api.bfs.admin.ch/hub/api/dam/assets",
+      "docs": "https://dam-api.bfs.admin.ch/hub/swagger-ui/index.html",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-get",
+        "expect": "response"
+      }
+    }
+  ],
+  "issued": "2026-08-15"
+}

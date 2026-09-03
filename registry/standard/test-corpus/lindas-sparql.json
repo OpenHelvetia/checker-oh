@@ -1,0 +1,45 @@
+{
+  "$schema": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "@context": "https://ld.openhelvetia.swiss/ns/manifest/v1",
+  "@id": "https://ld.openhelvetia.swiss/registry/lindas-sparql",
+  "@type": "Manifest",
+  "title": {
+    "de": "LINDAS – Linked Data Service der Bundesverwaltung (SPARQL)",
+    "en": "LINDAS – Swiss Federal Linked Data Service (SPARQL)"
+  },
+  "description": {
+    "de": "Zentraler Linked-Data-Dienst der Schweizer Bundesverwaltung: Knowledge Graphs von Bund und Kantonen (u. a. Fedlex, BFS-Register, RDF-Cubes) sind über einen offenen SPARQL-1.1-Endpunkt abfragbar.",
+    "en": "Central linked data service of the Swiss federal administration: knowledge graphs from federal and cantonal bodies (incl. Fedlex, FSO registers, RDF cubes) are queryable via an open SPARQL 1.1 endpoint."
+  },
+  "keyword": {
+    "de": [
+      "Linked Data",
+      "SPARQL",
+      "Knowledge Graph"
+    ],
+    "en": [
+      "linked data",
+      "SPARQL",
+      "knowledge graph"
+    ]
+  },
+  "publisher": "https://ld.openhelvetia.swiss/org/ch-bundesarchiv",
+  "license": "https://dcat-ap.ch/vocabulary/licenses/terms_open",
+  "landingPage": "https://lindas.admin.ch/",
+  "interfaces": [
+    {
+      "@type": "SparqlInterface",
+      "endpoint": "https://lindas.admin.ch/query",
+      "docs": "https://lindas.admin.ch/know-how",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "sparql-ask",
+        "expect": "boolean"
+      }
+    }
+  ],
+  "issued": "2026-08-15"
+}

@@ -1,0 +1,23 @@
+[package]
+name = "oh-sign"
+version = "0.1.0"
+edition = "2024"
+description = "Signing path for the agent-card envelope (L0.7): JCS + detached JWS, ES256/EdDSA"
+
+[lib]
+name = "oh_sign"
+path = "src/lib.rs"
+
+[dependencies]
+anyhow = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
+# All signature-critical dependencies pinned EXACTLY (tool register):
+# a silent minor bump must never change what verifies.
+serde_jcs = "=0.2.0"
+ed25519-dalek = "=3.0.0"
+p256 = { version = "=0.14.0", features = ["ecdsa"] }
+base64 = "=0.23.1"
+getrandom = "=0.4.3"
+
+[workspace]

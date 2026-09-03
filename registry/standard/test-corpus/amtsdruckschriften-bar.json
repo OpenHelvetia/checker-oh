@@ -1,0 +1,45 @@
+{
+  "$schema": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "@context": "https://ld.openhelvetia.swiss/ns/manifest/v1",
+  "@id": "https://ld.openhelvetia.swiss/registry/amtsdruckschriften-bar",
+  "@type": "Manifest",
+  "title": {
+    "de": "Amtsdruckschriften des Bundesarchivs (Bundesblatt 1849–2008 u.a.)",
+    "en": "Official publications digitised by the Swiss Federal Archives (Federal Gazette 1849–2008 et al.)"
+  },
+  "description": {
+    "de": "Digitalisierte historische Amtsdruckschriften des Bundes: Bundesblatt 1849–2008, parlamentarische Protokolle, Bundesratsprotokolle, Erlasse und weitere Serien, mit OCR-Volltextsuche und PDF-Faksimile-Download. Nur Weboberfläche, keine dokumentierte API.",
+    "en": "Digitised historical official publications of the Swiss Confederation: Federal Gazette 1849–2008, parliamentary records, Federal Council minutes, decrees and further series, with OCR full-text search and PDF facsimile download. Web interface only, no documented API."
+  },
+  "keyword": {
+    "de": [
+      "Bundesblatt",
+      "Archiv",
+      "Digitalisate"
+    ],
+    "en": [
+      "Federal Gazette",
+      "archives",
+      "digitised sources"
+    ]
+  },
+  "publisher": "https://ld.openhelvetia.swiss/org/ch-bundesarchiv",
+  "license": "https://dcat-ap.ch/vocabulary/licenses/terms_open",
+  "landingPage": "https://www.amtsdruckschriften.bar.admin.ch/",
+  "interfaces": [
+    {
+      "@type": "DownloadInterface",
+      "endpoint": "https://www.amtsdruckschriften.bar.admin.ch/",
+      "docs": "https://www.amtsdruckschriften.bar.admin.ch/",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-head",
+        "expect": "response"
+      }
+    }
+  ],
+  "issued": "2026-08-15"
+}

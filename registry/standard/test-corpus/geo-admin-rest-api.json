@@ -1,0 +1,45 @@
+{
+  "$schema": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "@context": "https://ld.openhelvetia.swiss/ns/manifest/v1",
+  "@id": "https://ld.openhelvetia.swiss/registry/geo-admin-rest-api",
+  "@type": "Manifest",
+  "title": {
+    "de": "REST-API api3.geo.admin.ch (Geocoding, Identify, Höhe, Profil)",
+    "en": "api3.geo.admin.ch REST API (geocoding, identify, height, profile)"
+  },
+  "description": {
+    "de": "REST-Dienste der Bundes-Geodaten-Infrastruktur unter api3.geo.admin.ch/rest/services: SearchServer (Geocoding von Orten, Adressen, Layern, Features), Identify-Feature-Abfragen, Höhen- und Profildienst. JSON-Antworten, wählbare Referenzsysteme (LV95, LV03, WGS84, Web Mercator).",
+    "en": "REST services of the Federal Spatial Data Infrastructure at api3.geo.admin.ch/rest/services: SearchServer (geocoding of places, addresses, layers, features), identify feature queries, height and profile services. JSON responses, selectable spatial references (LV95, LV03, WGS84, Web Mercator)."
+  },
+  "keyword": {
+    "de": [
+      "Geocoding",
+      "Höhenmodell",
+      "Suche"
+    ],
+    "en": [
+      "geocoding",
+      "elevation",
+      "search"
+    ]
+  },
+  "publisher": "https://ld.openhelvetia.swiss/org/ch-swisstopo",
+  "license": "https://dcat-ap.ch/vocabulary/licenses/terms_by",
+  "landingPage": "https://docs.geo.admin.ch/",
+  "interfaces": [
+    {
+      "@type": "RestInterface",
+      "endpoint": "https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=Bern&type=locations&sr=2056",
+      "docs": "https://docs.geo.admin.ch/access-data/search.html",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-get",
+        "expect": "response"
+      }
+    }
+  ],
+  "issued": "2026-08-15"
+}

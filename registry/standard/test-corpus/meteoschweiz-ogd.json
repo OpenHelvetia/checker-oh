@@ -1,0 +1,58 @@
+{
+  "$schema": "https://ld.openhelvetia.swiss/ns/manifest/schema/2026-08-15/manifest.schema.json",
+  "@context": "https://ld.openhelvetia.swiss/ns/manifest/v1",
+  "@id": "https://ld.openhelvetia.swiss/registry/meteoschweiz-ogd",
+  "@type": "Manifest",
+  "title": {
+    "de": "MeteoSchweiz Open Data (OGD)",
+    "en": "MeteoSwiss Open Data (OGD)"
+  },
+  "description": {
+    "de": "Wetter- und Klimadaten von MeteoSchweiz als Open Government Data: Bodenmessungen (SwissMetNet), Atmosphären-, Klima-, Radar- und Vorhersagedaten. Zugriff über die STAC-API der Bundes-Geodateninfrastruktur und direkte Datei-Downloads (CSV u.a.).",
+    "en": "Weather and climate data from MeteoSwiss as open government data: surface measurements (SwissMetNet), atmosphere, climate, radar and forecast data. Access via the STAC API of the federal spatial data infrastructure and direct file downloads (CSV etc.)."
+  },
+  "keyword": {
+    "de": [
+      "Wetter",
+      "Klima",
+      "Messdaten"
+    ],
+    "en": [
+      "weather",
+      "climate",
+      "measurements"
+    ]
+  },
+  "publisher": "https://ld.openhelvetia.swiss/org/ch-meteoschweiz",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "landingPage": "https://opendatadocs.meteoswiss.ch/",
+  "interfaces": [
+    {
+      "@type": "RestInterface",
+      "endpoint": "https://data.geo.admin.ch/api/stac/v1",
+      "docs": "https://opendatadocs.meteoswiss.ch/general/download",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-get",
+        "expect": "response"
+      }
+    },
+    {
+      "@type": "DownloadInterface",
+      "endpoint": "https://data.geo.admin.ch/api/stac/v1/collections/ch.meteoschweiz.ogd-smn",
+      "docs": "https://opendatadocs.meteoswiss.ch/general/download",
+      "auth": {
+        "authType": "none"
+      },
+      "tier": "base",
+      "probe": {
+        "kind": "http-head",
+        "expect": "response"
+      }
+    }
+  ],
+  "issued": "2026-08-15"
+}
