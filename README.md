@@ -119,11 +119,11 @@ The history is append-only JSONL: one line per run with instant, probe, address 
 
 The association develops all its modules in one corpus, on its own GitLab, where every change runs through a gate (formatting, Clippy without warnings, all tests, seal and drift checks). This repository is **assembled from that corpus** by the publication lane (`tools/publish-module.sh` there): it takes the crates and exactly the files their builds and tests need, runs the tests in the assembled tree, and pushes here. Each publication is one commit whose message names the corpus commit.
 
-This copy was published from corpus commit `9a70151` on 2026-09-03.
+This copy was published from corpus commit `d7c0b69` on 2026-09-04.
 
 ## Contributing, security, licence
 
 - **Issues** here are welcome: a wrong result, a missing case, an unclear sentence in this README. Please include the command you ran and what came back.
 - **Changes** go through the corpus and arrive here with the next publication; a pull request here is read and carried over by hand.
-- **Security reports**, in confidence: security@openhelvetia.swiss. The association answers within a working week.
+- **Security reports**, in confidence: admin@openhelvetia.swiss. The association answers within a working week.
 - **Licence:** Apache-2.0 (`LICENSE`, attribution in `NOTICE`).
