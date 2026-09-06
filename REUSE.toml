@@ -1,0 +1,12 @@
+# REUSE 3.3 (https://reuse.software) — the licence of every file in this
+# repository, by path. Assembled by the association's publication lane.
+version = 1
+SPDX-PackageName = "checker-oh"
+SPDX-PackageSupplier = "Verein OpenHelvetia <admin@openhelvetia.swiss>"
+SPDX-PackageDownloadLocation = "https://github.com/OpenHelvetia/checker-oh"
+
+[[annotations]]
+path = "**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Verein OpenHelvetia"
+SPDX-License-Identifier = "Apache-2.0"
